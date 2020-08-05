@@ -1,0 +1,28 @@
+<p> son </p>
+<p id="s"> </p>
+
+<script>
+    z=document.getElementById('s')
+
+    echo=e=>{
+        console.log("son recieve",e);
+        console.log(e.data);
+        d1={son:new Date(),father:e.data}
+        z.innerHTML=JSON.stringify(d1)
+        window.parent.postMessage(d1, e.origin);
+
+    }
+    window.addEventListener('message', echo , false)
+
+    log=async ()=>{
+            u='http://localhost'
+            r=await fetch("1.json").then(x=>x.json())
+            d1={...r,son:new Date()}
+            window.parent.postMessage(d1, "*");
+    }
+
+
+    setInterval(log,10000)
+
+
+</script>

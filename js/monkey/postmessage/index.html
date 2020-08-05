@@ -1,0 +1,28 @@
+<p >father</p>
+<p id="f"> </p>
+
+
+<iframe 
+    id="iframe" 
+    src="iframe.html"
+    width="1000px"
+    
+></iframe>
+
+<script>       
+        u='http://localhost'
+        var iframe = document.getElementById('iframe');
+        send=(d={})=>iframe.contentWindow.postMessage(d,"*");
+        hello=()=> {
+            send("hello "+new Date())
+        }
+        iframe.onload = hello 
+        window.addEventListener('message', function(e) {
+            z=document.getElementById('f')
+            z.innerHTML=JSON.stringify(e.data)
+            console.log('father rece',e.data)
+        }, false);
+
+        //setInterval(hello,3000)
+
+</script>
