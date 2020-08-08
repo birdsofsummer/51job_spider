@@ -65,7 +65,7 @@ func GetLists(keyword string,from int,to int,path string) (models.Joblist){
 	go func(){
 		for i:=from; i<= to1;i++{
 			fmt.Printf("get page start %d/%d \n",i,to1)
-			d:=ParseList(Get_list(keyword,1))
+			d:=ParseList(Get_list(keyword,i))
 			c <- d.EngineSearchResult
 			fmt.Printf("get page done %d/%d \n",i,to1)
 		}
