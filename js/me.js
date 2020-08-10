@@ -12,6 +12,13 @@ charset(superagent)
 
 const today=()=>moment().format('YYYYMMDD_hhmmss')
 
+const {
+    add,
+    del,
+    list,
+}=require('./redis')
+
+
 const config=require("./config")
 const cookie=config.cookie    ///
 
@@ -151,6 +158,8 @@ const my_applys=async (t=1e3)=>{
         const apply_info = await get_apply_info({cvinfo:aCvInfo})
         const ainfo= apply_info.html
 
+        add(d1.map(x=>x?.company?.name)).then(console.log)
+
         for (let ii of d1) {
 
             let cvlogid=ii.cvlogid
@@ -167,7 +176,8 @@ const my_applys=async (t=1e3)=>{
         console.log('done...%d/%d',i,to)
         await sleep(1000)
     }
-    let file_name='./data/myapply_'+today()+'.json'
+
+    let file_name='./data/myapply/myapply_'+today()+'.json'
     console.log('all done',file_name)
     utility.writeJSON(file_name,r)
     return r

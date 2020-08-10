@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>{{now}}</title>
+
+<style type="text/css" rel="stylesheet">
+    body{
+        margin:0;
+        padding:0;
+    }
+    *{
+        font-size:0.95rem;
+        color: gray;
+    }
+    .table {
+        display: table;
+    }
+    .row {
+        display: table-row;
+    }
+    .cell {
+        display: table-cell;
+        border-top: 0.1px dashed #80ae3d8c;
+        padding: 0.5rem;
+        white-space: nowrap;
+    }
+    a{
+        text-decoration: none;
+        color: gray;
+    }
+</style>
+
+
+
+</head>
+
+<body>
+
+<section>
+<ul class="table">
+    <li class="row"> 
+        <div class="cell index">
+           #
+        </div>
+
+        <div class="cell job_name">
+           job_name
+        </div>
+        <div class="cell providesalary_text">
+          providesalary_text
+        </div>
+        <div class="cell workarea_text">
+          workarea_text
+        </div>
+
+        <div class="cell company_name">
+          company_name
+        </div>
+    </li>
+{{#data}}
+    <li class="row">
+        <!--
+    <iv class="cell type">
+      {{type}}
+    </div>
+    <div class="cell jt">
+      {{jt}}
+    </div>
+    <div class="cell tags">
+      {{tags}}
+    </div>
+    <div class="cell ad_track">
+      {{ad_track}}
+    </div>
+    <div class="cell jobid">
+      {{jobid}}
+    </div>
+    <div class="cell coid">
+      {{coid}}
+    </div>
+    <div class="cell effect">
+      {{effect}}
+    </div>
+    <div class="cell is_special_job">
+      {{is_special_job}}
+    </div>
+    <div class="cell job_href">
+    <a href="{{{job_href}}}" target="_blank">  {{{job_href}}} </a>
+    </div>
+
+    -->
+    <div class="cell index">
+        {{index}}
+    </div>
+    <div class="cell job_name">
+        <a href="{{job_href}}" target="_blank">  {{job_name}}</a>
+    </div>
+    <div class="cell providesalary_text">
+      {{providesalary_text}}
+    </div>
+    <div class="cell workarea_text">
+      {{workarea_text}}
+    </div>
+
+    <div class="cell company_name">
+      {{company_name}}
+    </div>
+
+
+    <!--
+    <div class="cell job_title">
+      {{job_title}}
+    </div>
+    <div class="cell company_href">
+      {{company_href}}
+    </div>
+    -->
+
+    <!--
+    <div class="cell workarea">
+      {{workarea}}
+    </div>
+    <div class="cell updatedate">
+      {{updatedate}}
+    </div>
+    <div class="cell isIntern">
+      {{isIntern}}
+    </div>
+    <div class="cell iscommunicate">
+      {{iscommunicate}}
+    </div>
+    <div class="cell companytype_text">
+      {{companytype_text}}
+    </div>
+    <div class="cell degreefrom">
+      {{degreefrom}}
+    </div>
+    <div class="cell workyear">
+      {{workyear}}
+    </div>
+    <div class="cell issuedate">
+      {{issuedate}}
+    </div>
+    <div class="cell isFromXyz">
+      {{isFromXyz}}
+    </div>
+    <div class="cell jobwelf">
+      {{jobwelf}}
+    </div>
+    <div class="cell jobwelf_list">
+      {{jobwelf_list}}
+    </div>
+    <div class="cell attribute_text">
+      {{attribute_text}}
+    </div>
+    <div class="cell companysize_text">
+      {{companysize_text}}
+    </div>
+
+    <div class="cell companyind_text">
+      {{companyind_text}}
+    </div>
+
+    <div class="cell adid">
+      {{adid}}
+    </div>
+
+    -->
+  </li>
+{{/data}}
+</ul>
+</section>
+</body>
+</html>
+
+<script> 
+
+  var a={{{data1}}}
+
+</script>
